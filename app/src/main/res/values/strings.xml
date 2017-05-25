@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PartTimeJob</string>
+    <string name="etName">请输入账号</string>
+    <string name="etPass">请输入密码</string>
+    <string name="btnLogin">登录</string>
+    <string name="btnRegister">注册</string>
+
+    <string name="tv_top">兼职了</string>
+    <string name="tv_list">全部兼职</string>
+    <string name="tv_send">发布兼职</string>
+    <string name="tv_personal">个人中心</string>
+</resources>
