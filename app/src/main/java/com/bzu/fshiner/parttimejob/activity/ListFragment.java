@@ -2,12 +2,16 @@ package com.bzu.fshiner.parttimejob.activity;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.bzu.fshiner.parttimejob.R;
 import com.bzu.fshiner.parttimejob.adapter.JobAdapter;
@@ -23,7 +27,7 @@ import cn.bmob.v3.listener.FindListener;
  * Created by Administrator on 2017/5/9.
  */
 
-public class ListFragment extends Fragment {
+public class ListFragment extends Fragment implements AdapterView.OnItemClickListener,AbsListView.OnScrollListener {
     private ListView listview;
     private Context mContext;
     @Override
@@ -39,6 +43,8 @@ public class ListFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         listview = (ListView) getActivity().findViewById(R.id.list);
+        listview.setOnItemClickListener(this);
+        listview.setOnScrollListener(this);
         refresh();
     }
     public void refresh() {
@@ -54,5 +60,23 @@ public class ListFragment extends Fragment {
 
         });
 
+    }
+
+    @Override
+    public void onScrollStateChanged(AbsListView absListView, int i) {
+
+    }
+
+    @Override
+    public void onScroll(AbsListView absListView, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+      //  String ii = (String) listview.getItemAtPosition(i);
+       // Toast.makeText(mContext,ii,Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getActivity(),MoreActivity.class);
+        startActivity(intent);
     }
 }
