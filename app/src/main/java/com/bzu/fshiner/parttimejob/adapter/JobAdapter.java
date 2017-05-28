@@ -44,6 +44,10 @@ public class JobAdapter extends ArrayAdapter<Job> {
         }
         viewHolder.tvUsername.setText(bu.getTitle());
         viewHolder.tvDate.setText(bu.getCreatedAt());
+        viewHolder.tvUsername.setFocusable(false);
+
+
+
         return view;
     }
     class ViewHolder{
