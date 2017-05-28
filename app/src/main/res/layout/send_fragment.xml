@@ -1,88 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="73dp"
-        android:text="电话" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="46dp"
-        android:text="标题" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="53dp"
-        android:text="地址" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="73dp"
-        android:text="电话" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignLeft="@+id/editText5"
-        android:layout_alignStart="@+id/editText5" />
-
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_below="@+id/editText"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="textPostalAddress" />
-    <Button
-        android:id="@+id/fabu"
-        android:onClick="addjob"
+    <RelativeLayout
+        android:id="@+id/rl_title"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="标题:"
+            android:textSize="25sp" />
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_title"
+            android:background="@android:drawable/edit_text"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_price"
+        android:layout_below="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工作薪水:"
+            android:textSize="25sp" />
+        <EditText
+            android:id="@+id/et_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_price"
+            android:background="@android:drawable/edit_text"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_sex"
+        android:layout_below="@+id/rl_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="性别要求:"
+            android:textSize="25sp" />
+        <EditText
+            android:id="@+id/et_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_sex"
+            android:background="@android:drawable/edit_text"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_personNum"
+        android:layout_below="@+id/rl_sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_personNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="招聘人数:"
+            android:textSize="25sp" />
+        <EditText
+            android:id="@+id/et_personNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_personNum"
+            android:background="@android:drawable/edit_text"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_phone"
+        android:layout_below="@+id/rl_personNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系电话:"
+            android:textSize="25sp" />
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_phone"
+            android:background="@android:drawable/edit_text"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_time"
+        android:layout_below="@+id/rl_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工作时间:"
+            android:textSize="25sp" />
+        <EditText
+            android:id="@+id/et_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_time"
+            android:background="@android:drawable/edit_text"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_address"
+        android:layout_below="@+id/rl_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工作地点:"
+            android:textSize="25sp" />
+        <EditText
+            android:id="@+id/et_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_address"
+            android:background="@android:drawable/edit_text"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_description"
+        android:layout_below="@+id/rl_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工作内容:"
+            android:textSize="25sp" />
+        <EditText
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:layout_toRightOf="@+id/tv_description"
+            android:background="@android:drawable/edit_text"/>
+    </RelativeLayout>
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_below="@+id/rl_description"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="发布"
-        android:layout_marginTop="105dp"
-        android:layout_below="@+id/editText4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
+        android:layout_alignParentRight="true"
+        android:text="发布兼职"/>
 </RelativeLayout>

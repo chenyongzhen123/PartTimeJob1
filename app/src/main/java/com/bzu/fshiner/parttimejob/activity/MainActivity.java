@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv_list=(TextView)this.findViewById(R.id.tv_list);
         tv_send=(TextView)this.findViewById(R.id.tv_send);
         tv_personal=(TextView)this.findViewById(R.id.tv_personal);
-        button= (Button) findViewById(R.id.fabu);
+        button= (Button) findViewById(R.id.btn_send);
         fragment_container=(FrameLayout)findViewById(R.id.fragment_container);
         tv_list.setOnClickListener(this);
         tv_send.setOnClickListener(this);

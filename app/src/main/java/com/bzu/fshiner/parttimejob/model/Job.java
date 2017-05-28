@@ -14,8 +14,9 @@ public class Job extends BmobObject {
     private String publisher;
     private String address;
     private String price;
-    private Integer personNum;
+    private String personNum;
     private String description;
+    private String time;
 
 
     public String getTitle() {
@@ -74,12 +75,20 @@ public class Job extends BmobObject {
         this.price = price;
     }
 
-    public Integer getPersonNum() {
+    public String getPersonNum() {
         return personNum;
     }
 
-    public void setPersonNum(Integer personNum) {
+    public void setPersonNum(String personNum) {
         this.personNum = personNum;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String getDescription() {

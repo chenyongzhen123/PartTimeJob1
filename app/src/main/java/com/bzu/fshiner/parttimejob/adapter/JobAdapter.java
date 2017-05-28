@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.bzu.fshiner.parttimejob.R;
 import com.bzu.fshiner.parttimejob.model.Job;
@@ -34,16 +35,19 @@ public class JobAdapter extends ArrayAdapter<Job> {
         if(convertView==null){
             view = LayoutInflater.from(getContext()).inflate(rescourID, null);
             viewHolder = new ViewHolder();
-            viewHolder.tvUsername=(TextView) view.findViewById(R.id.tvuser);
+            viewHolder.tvUsername=(TextView) view.findViewById(R.id.tvTitle);
+            viewHolder.tvDate=(TextView) view.findViewById(R.id.tvDate);
             view.setTag(viewHolder);
         }else {
             view =convertView;
             viewHolder=(ViewHolder)view.getTag();
         }
         viewHolder.tvUsername.setText(bu.getTitle());
+        viewHolder.tvDate.setText(bu.getCreatedAt());
         return view;
     }
     class ViewHolder{
-        TextView tvUsername;
+        ImageView ima_list;
+        TextView tvUsername,tvDate;
     }
 }

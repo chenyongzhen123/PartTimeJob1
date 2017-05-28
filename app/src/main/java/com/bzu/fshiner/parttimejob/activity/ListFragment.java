@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +31,7 @@ import cn.bmob.v3.listener.FindListener;
 public class ListFragment extends Fragment implements AdapterView.OnItemClickListener,AbsListView.OnScrollListener {
     private ListView listview;
     private Context mContext;
+   // private JobAdapter jobAdapter;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +48,7 @@ public class ListFragment extends Fragment implements AdapterView.OnItemClickLis
         listview.setOnItemClickListener(this);
         listview.setOnScrollListener(this);
         refresh();
+
     }
     public void refresh() {
         BmobQuery<Job> query = new BmobQuery<Job>();
@@ -54,7 +57,8 @@ public class ListFragment extends Fragment implements AdapterView.OnItemClickLis
             @Override
             public void done(List<Job> list, BmobException e) {
                 if(e==null){
-                    listview.setAdapter(new JobAdapter(mContext,R.layout.job_item,list));
+                    listview.setAdapter(new JobAdapter(mContext,R.layout.list_item,list));
+
                 }
             }
 
@@ -73,9 +77,8 @@ public class ListFragment extends Fragment implements AdapterView.OnItemClickLis
     }
 
     @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-      //  String ii = (String) listview.getItemAtPosition(i);
-       // Toast.makeText(mContext,ii,Toast.LENGTH_LONG).show();
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+        Bundle bundle = new Bundle();
         Intent intent = new Intent(getActivity(),MoreActivity.class);
         startActivity(intent);
     }
